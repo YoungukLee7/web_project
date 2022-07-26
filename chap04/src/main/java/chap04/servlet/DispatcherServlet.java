@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import chap04.process.AddForm;
+import chap04.process.EmployeeAddFormProcess;
+import chap04.process.EmployeeAddProcess;
+import chap04.process.EmployeeInsert;
 import chap04.process.EmployeeListProcess;
 import chap04.process.Process;
 
@@ -20,6 +24,16 @@ public class DispatcherServlet extends HttpServlet{
 	public void init(ServletConfig config) throws ServletException {
 		url_mapping = new HashMap<>();
 		url_mapping.put("/employee/list", new EmployeeListProcess());
+		
+		// 여러개의 주소들을 등록해 놓을 수 있다
+		url_mapping.put("/addForm", new AddForm());
+		url_mapping.put("/employeeInsert", new EmployeeInsert());
+		
+		// 강사님이 푼 것
+		url_mapping.put("/employee/add_form", new EmployeeAddFormProcess());
+		url_mapping.put("/employee/add", new EmployeeAddProcess());
+		
+		
 		//url_mapping.put("/employee/add", new EmployeeAddProcess());
 		//url_mapping.put("/employee/modify", new EmployeeUpdateProcess());
 		
@@ -42,6 +56,11 @@ public class DispatcherServlet extends HttpServlet{
 		String nextPath;
 		if (process != null) {
 			nextPath = process.process(req, resp);
+			
+			if (nextPath.startsWith("redirect:")) {
+				resp.sendRedirect(nextPath.substring("redirect:".length()));
+				return;
+			}
 		} else {
 			nextPath = "/WEB-INF/views/errorpage/not_found.jsp";
 		}	
