@@ -44,7 +44,7 @@
 			<dd>if, else if, else처럼 사용할 수 있는 조건문</dd>
 			
 			<dt>c:forEach</dt>
-			<dd>순차적인 반복 처리</dd>
+			<dd>순차적인 반복 처리, 배열 요소를 순서대로 반복해서 처리할 수 있는 태그</dd>
 			
 			<dt>c:forTokens</dt>
 			<dd>하나의 긴 데이터를 자르면서 반복 처리</dd>

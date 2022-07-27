@@ -32,7 +32,7 @@ public class EmployeeAddProcess implements Process{
 		String sql = "INSERT INTO employees(employee_id,last_name,email,hire_date,job_id) " + "VALUES (?,?,?,?,?)";
 		
 		
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		//SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 	
 		
 		try (				

@@ -15,6 +15,7 @@ public class Employee {
 	private Double commission_pct;
 	private String job_id;
 	private Integer department_id;
+	private Integer manager_id;
 	
 	public Employee(ResultSet rs) throws SQLException {
 		employee_id		= rs.getInt("employee_id");
@@ -27,10 +28,23 @@ public class Employee {
 		department_id 	= rs.getInt("department_id");
 		email			= rs.getString("email");
 		phone_number	= rs.getString("phone_number");
+		manager_id		= rs.getInt("manager_id");
 	}
 
 	
 	
+	public Integer getManager_id() {
+		return manager_id;
+	}
+
+
+
+	public void setManager_id(Integer manager_id) {
+		this.manager_id = manager_id;
+	}
+
+
+
 	public Integer getEmployee_id() {
 		return employee_id;
 	}
@@ -149,6 +163,11 @@ public class Employee {
 		this.department_id = department_id;
 	}
 
+	// 이런것도 가능하다
+	private String getForm() {
+		return "<form></form>";
+
+	}
 
 
 	@Override

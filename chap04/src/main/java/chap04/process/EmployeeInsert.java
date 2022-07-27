@@ -39,7 +39,7 @@ public class EmployeeInsert implements Process{
 		int department_id = Integer.parseInt(request.getParameter("department_id"));
 		
 		
-		String sql = "INSERT INTO employees " + "VALUES (?,?,?,?,?,?,?,?,?,100,?)";
+		String sql = "INSERT INTO employees3 " + "VALUES (?,?,?,?,?,?,?,?,?,100,?)";
 		
 		try (				
 				Connection conn = DBConnector.getConnection();

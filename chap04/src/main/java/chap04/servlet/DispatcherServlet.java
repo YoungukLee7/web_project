@@ -12,8 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import chap04.process.AddForm;
 import chap04.process.EmployeeAddFormProcess;
 import chap04.process.EmployeeAddProcess;
+import chap04.process.EmployeeDelete;
 import chap04.process.EmployeeInsert;
 import chap04.process.EmployeeListProcess;
+import chap04.process.EmployeeModify;
+import chap04.process.EmployeeModifyFormProcess;
+import chap04.process.EmployeeModifySelect;
+import chap04.process.EmployeeModifyTest;
+import chap04.process.EmployeedeleteTest;
 import chap04.process.Process;
 
 public class DispatcherServlet extends HttpServlet{
@@ -33,10 +39,15 @@ public class DispatcherServlet extends HttpServlet{
 		url_mapping.put("/employee/add_form", new EmployeeAddFormProcess());
 		url_mapping.put("/employee/add", new EmployeeAddProcess());
 		
+		// list에서 수정/삭제 할수 있게 하기 내가 한 것
+		url_mapping.put("/employee/modify/select", new EmployeeModifySelect());
+		url_mapping.put("/employee/modify", new EmployeeModify());
+		url_mapping.put("/employee/delete", new EmployeeDelete());
 		
-		//url_mapping.put("/employee/add", new EmployeeAddProcess());
-		//url_mapping.put("/employee/modify", new EmployeeUpdateProcess());
-		
+		// 강사님이 수정/삭제 푼 것
+		url_mapping.put("/employee/modifyForm", new EmployeeModifyFormProcess());
+		url_mapping.put("/employee/modify/test", new EmployeeModifyTest());
+		url_mapping.put("/employee/delete/test", new EmployeedeleteTest());
 	}
 
 	@Override
