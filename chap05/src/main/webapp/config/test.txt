@@ -1,0 +1,3 @@
+user=hr
+password=1234
+resource=/assets/

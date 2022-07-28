@@ -1,0 +1,14 @@
+<!-- UTF-8로 한글 번역해준 것 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    </td>
+</tr>
+<tr>
+	<td colspan="4">
+		로그인 | 전체서비스
+
+		이용약관 | 개인정보처리방침 | 청소년 보호 | 책임자 : 이희만 서비스안내
+					각 언론사가 직접 콘텐츠를 편집합니다.
+	</td>
+</tr>
+</table>
