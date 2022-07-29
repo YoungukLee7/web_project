@@ -24,14 +24,16 @@ public class LoginCheckProcess implements Process{
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 		
-		String db_id = loginlist.get(0).getLogin_id();
-		String db_password = loginlist.get(0).getLogin_password();
-		
-		// 문자열은 보이는 것이 같아도 주소가 달라 == 말고 equals로 비교해야 한다.
-		if (id.equals(db_id) && password.equals(db_password)) {
-			System.out.println("로그인 성공!");
-		} else {
-			System.out.println("로그인 실패!!");
+		int i = 0;
+		while (i <= loginlist.size()) {
+			// 문자열은 보이는 것이 같아도 주소가 달라 == 말고 equals로 비교해야 한다.
+			if (id.equals(loginlist.get(i).getLogin_id()) && password.equals(loginlist.get(i).getLogin_password())) {
+				System.out.println("로그인 성공!");
+				break;
+			} else {
+				System.out.println("로그인 실패!!");
+			}
+			i++;
 		}
 		
 		
