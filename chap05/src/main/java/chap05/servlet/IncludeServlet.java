@@ -16,6 +16,11 @@ public class IncludeServlet extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		req.getRequestDispatcher("/WEB-INF/views/test/body1.jsp").forward(req, resp);
+		if (req.getRequestURI().endsWith("abc")) {
+			req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);			
+		}else {
+			req.getRequestDispatcher("/WEB-INF/views/test/body1.jsp").forward(req, resp);			
+		}
+		
 	}
 }

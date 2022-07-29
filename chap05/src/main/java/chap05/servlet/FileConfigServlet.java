@@ -29,6 +29,7 @@ public class FileConfigServlet extends HttpServlet{
 		// 사용되어지는 메서드들을 가지고 있는 클래스가 바로 ServletContext다.
 		
 		// System.out.println(req.getServletContext().getRealPath("/"));
+		// System.out.println(config.getServletContext().getRealPath("/"));
 		// 모든 서버는 다 webapp을 가지고 있다
 		// 위 경로가 이클립스에서 만든 가상의 서버에서 우리가 만든 가상의 프로그램을 연결해 실행해주는 주소이다.
 		// (실제로 우리가 만든 프로그램은 workspace에 저장되어 있다.)
