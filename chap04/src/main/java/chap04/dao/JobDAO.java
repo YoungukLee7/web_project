@@ -36,4 +36,7 @@ public class JobDAO {
 		return list;
 	}
 	
+	public static void main(String[] args) {
+		new JobDAO().getList();
+	}
 }
