@@ -19,7 +19,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/JavaAWS/lib/jstl-1.2.jar">
+	<classpathentry kind="lib" path="D:/자바 취업반/lib/jstl-1.2.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>

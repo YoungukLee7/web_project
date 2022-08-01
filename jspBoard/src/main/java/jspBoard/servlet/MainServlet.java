@@ -34,7 +34,7 @@ public class MainServlet extends HttpServlet{
 		if (process != null) {
 			nextPath = process.process(req, resp);
 		} else {
-			nextPath = "/WEB-INF/views/errorpage/not_found.jsp";
+			nextPath = "/WEB-INF/views/not_found.jsp";
 		}
 		req.getRequestDispatcher(nextPath).forward(req, resp);
 	}
