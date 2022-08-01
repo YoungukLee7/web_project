@@ -12,20 +12,26 @@ import jspBoard.model.loginBoard;
 
 public class loginBoardDAO {
 	
-	public static List<loginBoard> getList() {
+	public static List<loginBoard> getList(String id, String password) {
 		
 		List<loginBoard> list = new ArrayList<>();
 		
-		String sql = "SELECT * FROM loginBoard";
+		String sql = "SELECT * FROM loginBoard where login_id = ? and login_password=?";
 		
 		try (				
 				Connection conn = DBConnector.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);
-				ResultSet rs = pstmt.executeQuery();
 		){
-				while (rs.next()) {
-					list.add(new loginBoard(rs));
-				}
+				pstmt.setString(1, id);
+				pstmt.setString(2, password);
+				
+				try (
+						ResultSet rs = pstmt.executeQuery();
+				){
+					if (rs.next()) {
+						list.add(new loginBoard(rs));
+					}
+				} 
 				System.out.println("로그인 연결 완료!" + list);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -33,6 +39,11 @@ public class loginBoardDAO {
 		}
 		
 		return list;
+		
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(new loginBoardDAO().getList("admin", "1234"));
 		
 	}
 	

@@ -20,6 +20,15 @@
 				<td><input type="submit" value="로그인" /></td>
 			</tr>
 		</table>
+		
+		<% if (session.getAttribute("login") != null 
+		&& ((boolean)session.getAttribute("login")) == true) { %>
+		<div>현재 로그인 중입니다.<a href="#" onclick="location.href='../Bulletin'">게시판으로 가기</a></div>
+		<% } else { %>
+		<div>로그인이 필요합니다.</div>
+		<% } %>
 	</form>
+	
+	
 </body>
 </html>
